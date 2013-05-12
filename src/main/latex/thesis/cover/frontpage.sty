@@ -1,0 +1,79 @@
+% ------------------------------------------------------------------------
+% STRONA TYTUŁOWA
+% ------------------------------------------------------------------------
+
+\def\uczelnia#1{\gdef\@uczelnia{#1}}
+\def\instytut#1{\gdef\@instytut{#1}}
+\def\rok#1{\gdef\@rok{#1}}
+\def\promotor#1{\gdef\@promotor{#1}}
+\def\praca#1{\gdef\@praca{#1}}
+\def\english#1{\gdef\@english{#1}}
+\def\title#1{\gdef\@title{#1}\gdef\thetitle{#1}}
+
+% -----------------------------------------
+% Zmienna typu prawda/fałsz     wartość domyślna
+\newif\ifdraft@mode             \draft@modefalse
+% -----------------------------------------
+
+\def\draft{
+    \draft@modetrue
+}
+
+\def\stronatytulowa{
+
+    \newcommand*{\tmpthesisDraftKomunikat}{
+        \begin{array}{c}
+            \mbox{\Large UWAGA -- TO JEST WERSJA ROBOCZA}\\
+            \mbox{\large Wydruk z \today}\\
+        \end{array}
+    }
+
+    \vskip0.5in
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.33\hsize]{cover/uam_logo.jpg}
+	\end{figure}
+	
+    \begin{center}
+        \hyphenpenalty=10000\Large\expandafter{\@uczelnia}
+    \end{center}
+
+    \begin{center}
+        \large\@instytut
+    \end{center}
+    \vskip0.6in
+
+    \begin{center}
+        \hyphenpenalty=10000\Large\sffamily\expandafter{\textbf{\@title}} \\
+    	\vskip0.2in
+        \large{\@english}
+    \end{center}
+    
+    \vskip0.5in
+
+    \begin{center}
+        \@author
+    \end{center}
+    \vskip0.4in
+
+    \ifdraft@mode
+      \begin{center}\framebox{$\tmpthesisDraftKomunikat$}\end{center}
+    \fi
+
+    \vskip0.5in
+    \begin{flushright}
+        \begin{tabular}{c}
+        \@praca \\
+        wykonana pod kierunkiem \\
+        \@promotor \\
+        \end{tabular}
+    \end{flushright}
+
+    
+
+    \begin{flushleft}
+        \textrm Poznań \@rok
+    \end{flushleft}
+    \newpage
+
+}

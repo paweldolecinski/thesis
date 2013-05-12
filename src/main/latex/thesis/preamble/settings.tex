@@ -1,0 +1,103 @@
+% ------------------------------------------------------------------------
+% USTAWIENIA
+% ------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------
+%   Kropki po numerach sekcji, podsekcji, itd.
+%   Np. 1.2. Tytuł podrozdziału
+% ------------------------------------------------------------------------
+\makeatletter
+    \def\numberline#1{\hb@xt@\@tempdima{#1.\hfil}}                      %kropki w spisie treści
+    \renewcommand*\@seccntformat[1]{\csname the#1\endcsname.\enspace}   %kropki w treści dokumentu
+\makeatother
+
+% ------------------------------------------------------------------------
+%   Numeracja równań, rysunków i tabel
+%   Np.: (1.2), gdzie:
+%   1 - numer sekcji, 2 - numer równania, rysunku, tabeli
+%   Uwaga ogólna: o otoczeniu figure ma być najpierw \caption{}, potem \label{}, inaczej odnośnik nie działa!
+% ------------------------------------------------------------------------
+\makeatletter
+    \@addtoreset{equation}{section} %resetuje licznik po rozpoczęciu nowej sekcji
+    \renewcommand{\theequation}{{\thesection}.\@arabic\c@equation} %dodaje kropkę
+
+    \@addtoreset{figure}{section}
+    \renewcommand{\thefigure}{{\thesection}.\@arabic\c@figure}
+
+    \@addtoreset{table}{section}
+    \renewcommand{\thetable}{{\thesection}.\@arabic\c@table}
+\makeatother
+
+% ------------------------------------------------------------------------
+% Tablica
+% ------------------------------------------------------------------------
+
+\def\tabularxcolumn#1{m{#1}} %defines the X column to use m (\parbox[c]) instead
+% of p (`parbox[t]`).
+
+\newenvironment{tablica}[3]
+{
+    \begin{table}[!tb]
+    \centering
+    \caption[#1]{#2}
+    \vskip 9pt
+    #3
+}{
+    \end{table}
+}
+
+\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+
+% ------------------------------------------------------------------------
+% Definicje
+% ------------------------------------------------------------------------
+\def\nonumsection#1{%
+    \section*{#1}%
+    \addcontentsline{toc}{section}{#1}%
+    }
+\def\nonumsubsection#1{%
+    \subsection*{#1}%
+    \addcontentsline{toc}{subsection}{#1}%
+    }
+
+\newcommand{\atp}{ATP/EMTP} % Inaczej: \def\atp{ATP/EMTP}
+
+% ------------------------------------------------------------------------
+% Inne
+% ------------------------------------------------------------------------
+\frenchspacing                      %nie pamiętam co to jest, ale używam
+\flushbottom                       %nie pamiętam co to jest, ale nie używam
+\hyphenation{ATP/-EMTP}             %dzielenie wyrazu w żądanym miejscu
+\setlength{\parskip}{3pt}           %odstęp pomiędzy akapitami
+\linespread{1.2}                    %odstęp pomiędzy liniami (interlinia)
+\setcounter{tocdepth}{2}            %uwzględnianie w spisie treści czterech poziomów sekcji
+\setcounter{secnumdepth}{2}         
+
+\theoremstyle{definition}
+\newtheorem*{dow}{Dowód}
+\newtheorem{definition}{Definicja}[chapter]
+\newtheorem{example}{Przykład}[chapter]
+\newtheorem{aks}{Aksjomat}[chapter]
+\newtheorem{theorem}{Twierdzenie}[chapter]
+\newtheorem*{uw}{Uwaga}
+\numberwithin{equation}{section} 
+
+\makeatletter
+\@beginparpenalty=100
+\makeatother
+
+\renewcommand{\labelitemi}{$\bullet$}
+% \renewcommand{\labelitemi}{$-$} % Lista w itemize bullet "-"
+
+\pagestyle{companion}
+
+\copypagestyle{compcopy}{plain}
+\makeevenfoot{compcopy}{}{}{}
+\makeoddfoot{compcopy}{}{}{}
+\aliaspagestyle{chapter}{compcopy}
+
+\graphicspath{ {./} }

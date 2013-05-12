@@ -1,0 +1,48 @@
+% ------------------------------------------------------------------------
+% PAKIETY
+% ------------------------------------------------------------------------
+%różne pakiety matematyczne, warto przejrzeć dokumentację, muszą być powyżej ustawień językowych.
+\usepackage{amsthm}
+\usepackage{mathrsfs}   %Różne symbole matematyczne opisane w katalogu ~\doc\latex\comprehensive. 
+\usepackage{amssymb}    %Różne symbole matematyczne.
+\usepackage{amsmath}    %Dodatkowe funkcje matematyczne,
+
+%język polski i klawiatura
+\usepackage[english,polish]{babel}
+\usepackage[OT4]{polski}
+\usepackage[utf8]{inputenc}                       %Strona kodowa polskich znaków.
+\usepackage[scaled]{helvet}						  %Czcionka Helvetica! :)
+\renewcommand*\familydefault{\sfdefault} 			%% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+%obsługa pdf'a
+\usepackage[pdftex,usenames,dvipsnames]{color}      %Obsługa kolorów
+\usepackage[pdftex,pagebackref=false,draft=false,pdfpagelabels=false,
+colorlinks=true,urlcolor=blue,linkcolor=red,citecolor=blue,
+pdfstartview=FitH,pdfstartpage=1,pdfpagemode=UseOutlines,bookmarks=true,
+bookmarksopen=true,bookmarksopenlevel=2,bookmarksnumbered=true, pdfauthor={Pawel
+Dolecinski}, pdftitle={Praca Magisterska},pdfsubject={Modelowanie procesów
+grupowego podejmowania decyzji w warunkach dynamicznych},pdfkeywords={}, 
+unicode=true]{hyperref}   %Opcja pagebackref=true dotyczy bibliografii: pokazuje w spisie literatury numery stron, na których odwołano się do danej pozycji.
+
+
+\usepackage{graphicx}
+\usepackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{placeins}
+
+\usepackage{cover/frontpage}
+
+%inne
+\usepackage{array}       %Ładniej drukuje tabelki
+\usepackage{listings}    %Listingi programow.
+\usepackage{subfig}
+\usepackage{here}        %Wprowadza dodtkowy parametr umiejscowienia rysunków, tabel, itp.: H
+\usepackage{natbib}
+\usepackage{enumerate} 
+\usepackage{multirow}
+\usepackage{chngcntr}
+\usepackage{tabularx}
+\usepackage[colorinlistoftodos,textsize=tiny]{todonotes}
+\usepackage[singlelinecheck=off]{caption}
+
+\usepackage{indentfirst}

@@ -1,0 +1,93 @@
+% ------------------------------------------------------------------------
+% Tytuł: Modelowanie procesów grupowego podejmowania decyzji w warunkach dynamicznych 
+% English: Modeling group decision making processes in dynamic conditions
+% Autor: Paweł Doleciński
+% Data:    2013
+% ------------------------------------------------------------------------
+
+\documentclass[12pt,oneside]{memoir}
+
+    \input{preamble/packages.tex}
+    \input{preamble/settings.tex}
+
+    \title{Modelowanie procesów grupowego podejmowania decyzji w warunkach dynamicznych}
+    \author{Paweł Doleciński}
+
+    \uczelnia{Uniwersytet im. Adama Mickiewicza w Poznaniu}
+    \instytut{Wydział Matematyki i Informatyki}
+    \promotor{prof. UAM dr hab. Macieja Wygralaka}
+    \praca{PRACA MAGISTERSKA}
+    \english{Modeling group decision making processes in dynamic conditions}
+    \rok{2013}
+	
+	
+	\draft
+
+\begin{document}
+    \renewcommand{\figurename}{Rys.}    %musi byc pod \begin{document}, bo wtym miejscu pakiet 'babel' narzuca swoje ustawienia
+    \renewcommand{\tablename}{Tab.}     %j.w.
+    \pagenumbering{arabic}              %numeracja stron: rzymska
+    \thispagestyle{empty}               %na tej stronie: brak numeru
+    
+    \stronatytulowa  
+
+	\input{cover/oswiadczenie}
+    \newpage
+
+	\hypersetup{linkcolor=black}
+
+    \tableofcontents*
+	\newpage
+
+	\chapter*{Wstęp}
+	\addcontentsline{toc}{chapter}{Wstęp}
+	\input{chapters/intro/intro}
+
+	\chapter{Teoria decyzji}
+  	\input{chapters/decisiontheory/decisiontheory}
+	
+	\chapter{Grupowe podejmowanie decyzji}
+	\input{chapters/groupdecision/groupdecision}
+	
+	\chapter{Modelowanie grupowego podejmowania decyzji}
+	\input{chapters/modelinggroupdecision/modelinggroupdecision}
+	
+	\chapter{Modelowanie rozmyte}
+	\input{chapters/fuzzylogic/fuzzylogic}
+	
+	\chapter{Sposoby reprezentacji preferencji}
+	\input{chapters/preferences/preferences}
+	
+	\chapter{System wspomagania decyzji grupowej}
+	\input{chapters/tdmmodel/tdmmodel}
+	
+	\chapter{Prototyp aplikacji TDM }
+	\input{chapters/prototyp/prototyp}
+	
+	\chapter{Podsumowanie i plany rozwoju systemu}
+	\input{chapters/furtherwork/furtherwork}	
+	
+    \nocite{*}
+    \label{biblio}
+    \bibliographystyle{bib/plain_pl}
+    \bibliography{bib/bibliography}
+    
+    \addtolength\cftfigurenumwidth{1em} % Większy odstęp pomiedzy numerem rys. a jego tytułem.
+    \listoffigures
+	\newpage
+	\addtolength\cfttablenumwidth{1em}
+	\listoftables	
+	
+	\begin{comment}
+    \label{Załączniki}
+    \newpage
+    \appendix
+    \renewcommand{\appendixtocname}{Załączniki}
+    \renewcommand{\appendixpagename}{~\vspace{8cm} \begin{center}Załączniki\end{center}\newpage}
+    \thispagestyle{empty}
+    \addappheadtotoc
+    \appendixpage
+	\end{comment}
+
+	\listoftodos
+\end{document}
