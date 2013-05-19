@@ -42,11 +42,10 @@ zbiorów, z każdym zbiorem $A$ powiązana jest \emph{funkcja charakterystyczna}
 $$ \mathcal{X}_A(x) = 
   \left\{ 
 	\begin{array}{ll}
-	  0 & \quad \textrm{gdy } x \notin A \\
-      1 & \quad \textrm{gdy } x \in A
+	  0, & \quad \textrm{gdy } x \notin A, \\
+      1, & \quad \textrm{gdy } x \in A,
   	\end{array} 
-  \right., $$
-  
+  \right. $$  
 która dla dowolnego elementu $x$  w uniwersum $\mathcal{X}$ przyjmuje wartość
 $1$, jeśli $x$ należy do zbioru $A$, oraz $0$ w przeciwnym przypadku.
 Przykładowy wykres funkcji charakterystycznej przedstawiony jest na rysunku
@@ -78,11 +77,9 @@ Zadeha wprowadzenia pojęcia zbioru nieostrego (rozmytego).
 \begin{definition}[Zbiór rozmyty]
 Jeżeli $\mathcal{X}$ jest kolekcją obiektów to zbiór rozmyty $A$ w przestrzeni
 $\mathcal{X}$ określa się jako zbiór (klasyczny) par uporządkowanych
-
 \begin{equation}
 A = \{ (x, \mu_A(x)) : x \in \mathcal{X} \},
 \end{equation}
-
 gdzie $\mu_A$ jest funkcją przynależności zbioru rozmytego $A$ oraz $\mu_A(x)
 \in [0,1]$ nazywany jest stopniem przynależności elementu $x$ do zbioru
 rozmytego $A$. Tak zdefiniowany zbiór rozmyty jest tożsamy z funkcją
@@ -102,48 +99,40 @@ zaprezentować jak na rysunku \ref{fig:funkcja_przynaleznosci}.
 
 Ze zbiorami rozmytymi wiąże się kilka przydatnych pojęć przedstawionych poniżej.
 
-\begin{definition}[Singleton]
-Niech $A = \{ \bar{x} \}$. Wtedy funkcja przynależności zdefiniowana jest
-następująco:
-
+\begin{definition}[Nośnik zbioru] Niech $A : X \rightarrow [0,1].$ Zbiór:
 \begin{equation}
-\mu_A(x) = 
-\left\{ 
-	\begin{array}{ll}
-	  0 & \quad \textrm{gdy } x \neq \bar{x} \\
-      1 & \quad \textrm{gdy } x = \bar{x}
-  	\end{array} 
-  \right..
+  \mathrm{supp}(A) = \{ x \in \mathcal{X} : A(x) > 0 \}.
 \end{equation}
-
-Taka funkcja przynależności charakteryzuje jednoelementowy zbiór rozmyty.
-Jedynym elementem w pełni należącym do zbioru rozmytego $A$ jest $\bar{x}$.
+nazywamy \emph{nośnikiem} (ang. support) zbioru nieostrego.
+Nośnik zbioru to inaczej zbiór tych elementów $x$, które mają znaczenie dla $A$.  
 \end{definition}
 
-\begin{definition}[Nośnik zbioru]
-\begin{equation}
-  \mathrm{supp}(A) = \{ x \in \mathcal{X} : \mu_A(x) > 0 \}.
-\end{equation}
-Nośnik zbioru to zbiór tych $x$, które mają znaczenie dla $A$.  
+\begin{definition}
+Niech $A : X \rightarrow [0,1]$.
+\begin{itemize}
+  \item \emph{t-przekrojem} i \emph{jądrem} $A$ nazywa się odpowiednio zbiory
+  \newline $A_t = \{ x \in X : A(x) \geq t \}$ i $ker(A) = A_1$.
+  \item Mówimy, że $A$ jest \emph{skończony}, gdy $supp(A)$ jest zbiorem
+  skończonym, a w przeciwnym przypadku $A$ nazywamy \emph{nieskończonym} zbiorem
+  nieostrym.
+  \item Jeżeli $ker(A) \neq \emptyset,$ mówimy, że $A$ jest \emph{normalny}, a w
+  przeciwnym przypadku $A$ nazywamy \emph{podnormalnym} lub \emph{subnormalnym}.
+  \item Jeśli $|supp(A)| = 1$, $A$ nazywamy \emph{singletonem}.
+\end{itemize}
 \end{definition}
 
-\begin{definition}[Wysokość zbioru]
-\begin{equation}
-  h(A) = \sup_{x \in \mathcal{X}} \mu_A(x).
-\end{equation}
-\end{definition}
-
-Mówi się, że zbiór rozmyty $A$ jest normalny jeżeli $h(A)=1$. Takie ograniczenie
-na funkcję przynależności z punktu widzenia teorii jest nieistotne, jednakże w
-zastosowaniach praktycznych okazuje się bardzo przydatne. Jeżeli zbiór rozmyty
-$A$ jest normalny to wartość funkcji przynależności można interpretować jako
-procent na ile dany element $x$ należy do $A$.
+\emph{Normalny} zbiór rozmyty nakłada ograniczenie na funkcję przynależności,
+które z punktu widzenia teorii jest nieistotne, jednakże w zastosowaniach
+praktycznych okazuje się bardzo przydatne. Jeżeli zbiór rozmyty $A$ jest
+normalny to wartość funkcji przynależności można interpretować jako procent na
+ile dany element $x$ należy do $A$.
 
 Jednym z ważniejszych pojęć zbiorów rozmytych wykorzystywanym przy modelowaniu
 podejmowania decyzji jest \emph{zmienna lingwistyczna}. Rozważmy zdania:
-
-$$\text{Tamto drzewo jest wysokie.}$$
-$$\text{Ta książka jest droga.}$$
+\begin{itemize}
+  \item[] \emph{Tamto drzewo jest wysokie.}
+  \item[] \emph{Ta książka jest droga.}
+\end{itemize}
 
 W pierwszym zdaniu atrybutem drzewa jest jego wysokość. Atrybut ten przyjmuje
 wartość ,,wysokie''. W drugim przykładzie atrybutem książki jest cena, której
@@ -151,13 +140,13 @@ wartość to ,,droga''. Sposób pojmowania tych wartości lingwistycznych może 
 różny dla różnych osób, dlatego każda taka wartość charakteryzowana jest zbiorem
 rozmytym.
 
-\begin{definition} Zmienną lingwistyczną nazywamy czwórkę $(N,T,X,M_N)$, gdzie
+\begin{definition} Zmienną lingwistyczną nazywamy czwórkę $(N,X,T,M_N)$, gdzie
 
 \begin{tabular}{ll}
   $N$ & \qquad nazwa zmiennej (np. \textit{wiek}), \\
-  $T$ & \qquad zbiór wartości lingwistycznych (termów) (np. \{młody, średni,
-  stary\}), \\
   $X$ & \qquad przestrzeń rozważań (np. [0, 125] lat), \\
+  $T$ & \qquad zbiór wartości lingwistycznych (terminów) (np. \{młody, średni,
+  stary\}), \\
   $M_N$ & \qquad funkcja semantyczna $M_N : T \rightarrow \textrm{zbiór funkcji
   przynależności}$.
 \end{tabular}
@@ -214,8 +203,8 @@ maksimum i minimum w definicjach, odpowiednio, sumy i przekroju zbiorów
 rozmytych.
 
 \begin{definition}[t-norma]
-Funkcję $t : [0,1] \times [0,1] \rightarrow [0,1]$ nazywamy \emph{t-normą}
-jeżeli:
+Funkcję $t : [0,1] \times [0,1] \rightarrow [0,1]$ nazywamy \emph{normą
+triangularną} (krótko: \emph{t-normą}) jeżeli:
 \begin{itemize}
   \item funkcja $t$ jest monotoniczna $$a \leq b \Rightarrow t(a,c) \leq
   t(b,c),$$
@@ -235,8 +224,8 @@ Najczęściej spotykane t-normy to:
 \end{itemize}
 
 \begin{definition}[t-konorma]
-Funkcję $s : [0,1] \times [0,1] \rightarrow [0,1]$ nazywamy \emph{t-konormą}
-jeżeli:
+Funkcję $s : [0,1] \times [0,1] \rightarrow [0,1]$ nazywamy \emph{konormą
+triangularną} (krótko: \emph{t-konormą}) jeżeli:
 \begin{itemize}
   \item funkcja $s$ jest monotoniczna $$a \leq b \Rightarrow s(a,c) \leq
   s(b,c),$$
@@ -301,12 +290,12 @@ $$
 A = 
 \left\{ 
 	\begin{array}{cl}
-	  1 & \quad \textrm{jeżeli } x = y \\
-      0.8 & \quad \textrm{jeżeli } |x - y| = 1 \\
-      0.6 & \quad \textrm{jeżeli } |x - y| = 2 \\
-      0.4 & \quad \textrm{jeżeli } |x - y| = 3 \\
+	  1, & \quad \textrm{jeżeli } x = y, \\
+      0.8, & \quad \textrm{jeżeli } |x - y| = 1, \\
+      0.6, & \quad \textrm{jeżeli } |x - y| = 2, \\
+      0.4, & \quad \textrm{jeżeli } |x - y| = 3. \\
   	\end{array} 
-  \right..
+  \right.
 $$
 \end{example}
 
@@ -317,41 +306,56 @@ jest możliwość agregacji danych. Mając zebrane dane o preferencjach ekspert�
 postaci zbiorów rozmytych, należy zebrać je w jedność w celu zbadania poziomu
 konsensusu.
 
-Jednym z najbardziej popularnych i najczęściej wykorzystywanych jest operator
-OWA (ang. Ordered Weighted Averaging).
+\begin{definition}
+\emph{Operatorem agregacji} nazywamy odwzorowanie
+$$
+Agr: \cup_{n \geq 1} [0,1]^n \rightarrow [0,1],
+$$
+spełniające następujące warunki:
+\begin{itemize}
+  \item monotoniczność $Agr(a_1, a_2, \dotsc, a_n) \leq Agr(b_1, b_2, \dotsc,
+  b_n), \text{ gdy } a_i \leq b_i \text{ dla } i=1,2,\dotsc,n$,
+  \item warunek identyczności $Agr(a) = a$ dla każdego $a \in [0,1]$,
+  \item warunki brzegowe $Agr(0, \dotsc, 0) = 0, Agr(1, \dotsc, 1) = 1$.
+\end{itemize}
+\end{definition}
+
+Jednymi z najbardziej popularnych i najczęściej wykorzystywanych jest rodzina
+operatorów uporządkowanej średniej ważonej OWA (ang. Ordered Weighted
+Averaging).
 
 \begin{definition}
-Operator OWA wymiaru $n$ jest to odwzorowanie $F : I^n \rightarrow I$ (gdzie
-$I=[0,1]$) z przypisanym wektorem wag $V=(v_1,v_2,\dotsc,v_n)^T$ takim, że
-$v_i \in [0,1]$, $1 \leq i \leq n$ oraz $\sum_{i=1}^{n} v_i = 1$.
-Ponadto
+Operator OWA wymiaru $n$ jest to odwzorowanie $U : [0,1]^n \rightarrow [0,1]$
+z przypisanym wektorem wag $w=(w_1,w_2,\dotsc,w_n)^T$ take, że
 \begin{equation}
-F(a_1,a_2,\dotsc,a_n) = v_1b_1 + v_2b_2 + \dotsb + v_nb_n,
+F(a_1,a_2,\dotsc,a_n) = w_1b_1 + w_2b_2 + \dotsb + w_nb_n,
 \end{equation}
-gdzie $b_i$ jest największym elementem z $a_1,a_2,\dotsc, a_n.$
+gdzie $w_i \in [0,1]$ dla $i=1,\dotsc, n$ oraz $\sum_{i=1}^{n} w_i = 1$, a ciąg
+$(b_i)_{i=1,n}$ powstaje prze nierosnące uporządkowanie wyrazów ciągu
+$(a_i)_{i=1,n}$
 \end{definition}
 
 Operator OWA zapewnia ciągłe przejście z ,,bezwzględnego i'' do ,,bezwzględnego
-lub'' poprzez korygowanie wektora wag $V$. Wektor wag $V$ może być ustalony przy
+lub'' poprzez korygowanie wektora wag $w$. Wektor wag $w$ może być ustalony przy
 użyciu funkcji kwantyfikatora $Q(x)$ w następujący sposób:
-$$v_i = Q(\frac{i}{n}) - Q(i - \frac{1}{n}).$$
+$$w_i = Q(\frac{i}{n}) - Q(i - \frac{1}{n}).$$
 
 Kwantyfikator $Q$ może być reprezentowany jako zbiór rozmyty taki, że dla
 każdego $x \in [0,1]$, $Q(x)$ oznacza stopień, w jakim $x$ obiektów spełnia
 pojęcie symbolizowane przez $Q$. Zatem stopień dominacji grupy, w której
 ,,większość'' ekspertów popiera alternatywę $a$ może być określony jako:
 $$e(a) = F_Q(e^1(a),e^2(a),\dotsc,e^m(a)),$$
-gdzie $F_Q$ jest operatorem OWA. Wektor wag $V_Q = (v_1,v_2,\dotsc,v_m)$ może
+gdzie $F_Q$ jest operatorem OWA. Wektor wag $w_Q = (w_1,w_2,\dotsc,w_m)$ może
 być ustalony przy pomocy następującej funkcji kwantyfikatora $Q$:
 $$
 Q(x) = 
 \left\{ 
 	\begin{array}{cl}
-	  1					& \quad  x > b \\
-      \frac{x-a}{b-a} 	& \quad  a \leq x \leq b \;\; a,b \in [0,1] \\
-      0 				& \quad  x < a \\
+	  1	,				& \quad  x > b, \\
+      \frac{x-a}{b-a}, 	& \quad  a \leq x \leq b \;\; a,b \in [0,1], \\
+      0 ,				& \quad  x < a. \\
   	\end{array} 
-  \right..
+  \right.
 $$
 
 Rysunki \ref{fig:kwantyfikator_lingwistyczny_wiekszosc} oraz
@@ -378,7 +382,7 @@ wyglądają następująco: $[0.58, 0.33, 0.92, 0.08, 0.72, 0.65]$, a do agregacj
 został użyty kwantyfikator lingwistyczny $Q = \textrm{,,większość''}$. Stopień
 dominacji grupowej wynosi:
 $$e(a) = F_{Q_{Most}}(0.58, 0.33, 0.92, 0.08, 0.72, 0.65) = 0.613,$$
-gdzie $V=(0, 0.07, 0.33, 0.60, 0, 0).$
+gdzie $w=(0, 0.07, 0.33, 0.60, 0, 0).$
 \end{example}
 
 Z powyższego przykładu wynika, że kwantyfikator lingwistyczny ,,Większość''
@@ -399,10 +403,10 @@ danych.
 
 Człowiek z natury porusza się w środowisku nieprecyzyjnym. Każdy potrafi 
 powiedzieć, czy w danej restauracji smakuje mu jedzenie (wyśmienite, smaczne,
-przeciętne, niesmaczne, $\dotsc$). Jednak mało kto potrafi w sposób ścisły, z użyciem liczb,
-sprecyzować swoją opinię. Jest to subiektywna sprawa, osobiste odczucie. 
-Nieprecyzyjność jest całkowicie naturalna i stanowi nieodłączny element 
-podejmowania decyzji.
+przeciętne, niesmaczne, $\dotsc$). Jednak mało kto potrafi w sposób ścisły, z
+użyciem liczb, sprecyzować swoją opinię. Jest to subiektywna sprawa, osobiste
+odczucie. Nieprecyzyjność jest całkowicie naturalna i stanowi nieodłączny
+element podejmowania decyzji.
 
 Grupowe podejmowanie decyzji jest bardzo dobrym przykładem na to, że 
 modelowanie tego procesu tylko przy użyciu metod precyzyjnych jest zadaniem 
