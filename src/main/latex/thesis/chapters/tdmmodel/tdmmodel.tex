@@ -136,10 +136,10 @@ $^{u^k_i}/_{u^k_j}$ przy użyciu następującej funkcji transformacji:
 p^k_{ij} = f(u^k_i, u^k_j) =
   \left\{ 
 	\begin{array}{ll}
-	  \frac{s(u^k_i)}{s(u^k_i) + s(u^k_j)} & \quad \textrm{jeżeli } (u^k_i,u^k_j)
-	  \neq 0
+	  \frac{s(u^k_i)}{s(u^k_i) + s(u^k_j)} , & \quad \textrm{jeżeli } (u^k_i,u^k_j)
+	  \neq 0 ,
 	  \\
-      \frac{1}{2} & \quad \textrm{jeżeli } (u^k_i,u^k_j) = 0
+      \frac{1}{2} , & \quad \textrm{jeżeli } (u^k_i,u^k_j) = 0,
   	\end{array} 
   \right. (i \neq j) .
 \end{equation}
@@ -351,17 +351,17 @@ konsensusu, preferencje ekspertów muszą ulec modyfikacji.
 Każdy z parametrów konsensusu wymaga wykorzystania funkcji odległości
 $d(V^k,V^c)$, aby uzyskać poziom porozumienia pomiędzy indywidualnym
 rozwiązaniem eksperta $e_k$, $V^k = (V^k_1, \dotsc, V^k_n)$, gdzie $V^k_i$ to
-pozycja alternatywy $x_i$ w rozwiązaniu $k-tego$ eksperta, oraz globalnym
+pozycja alternatywy $x_i$ w rozwiązaniu $k-tego$ eksperta oraz globalnym
 rozwiązaniem $V^c = (V^c_1, \dotsc, V^c_n)$, gdzie $V^c_i$ to pozycja
 alternatywy $x_i$ w globalnym rozwiązaniu. W tym celu można korzystać z wielu
 różnych metod, takich jak na przykład odległość euklidesowa albo kosinus i sinus
-kąta między wektorami. W tym modelu wykorzystywana jest rzeczywista w
-wektorze preferencji, ponieważ identyczne rankingi alternatyw mogą mieć
-przypisane różne wektory stopni wyboru. Jako przykład rozpatrzone zostaną dwa
+kąta między wektorami. W tym modelu wykorzystywana jest rzeczywista\todo{jaka
+rzeczywista} w wektorze preferencji, ponieważ identyczne rankingi alternatyw
+mogą mieć przypisane różne wektory stopni wyboru. Jako przykład rozpatrzone zostaną dwa
 wektory uporządkowania alternatyw: $[(3;0.8), (1;1), (2;0.9), (4;0.4)]$ oraz
 $[(3;0.4), (1;0.8), (2;0.5), (4;0.1)]$, gdzie $(3; 0.4)$ w drugim wektorze
 oznacza, że pierwsza alternatywa jest na trzeciej pozycji ze stopniem wyboru
-$0.4$. Zatem w obu wektorach pierwsza alternatywa jest na trzeciej pozycji, ale
+$0.4$. Zatem, w obu wektorach pierwsza alternatywa jest na trzeciej pozycji, ale
 w każdym z innym stopniem wyboru. Gdyby używać stopni wyboru przy porównywaniu
 konsensusu to można by mówić o pełnym konsensusie, co jest w rzeczywistości
 bardzo trudne do osiągnięcia. Tym bardziej, że w systemie wykorzystywane są
@@ -373,7 +373,7 @@ Zatem, określanie wskaźników konsensusu odbywa się w następujący sposób:
   porównując pozycję danej alternatywy w rozwiązaniu eksperta oraz zbiorczym.
   Porównanie to jest wykonywane przy pomocy funkcji $p_k(x_i) = p(V^k,V^c)(x_i)
   = f(|V^c_i - V^k_i|)$ odzwierciedlającej bliskość obu pozycji. Oznacza to, że
-  taka funkcja musi być funkcją rosnącą. Jak funkcję ogólną przyjmuje się
+  taka funkcja musi być funkcją rosnącą. Jako funkcję ogólną przyjmuje się
   $f(x) = (a \cdot x)^b, 1 \geq b \geq 0$, a w tym szczególnym przypadku
   rozważana będzie funkcja z $a = \frac{1}{n-1}$:
   \begin{equation}
@@ -381,11 +381,11 @@ Zatem, określanie wskaźników konsensusu odbywa się w następujący sposób:
   V^k_i|}{n-1})^b \in [0,1].
   \end{equation}
   Parametr $b$ kontroluje rygorystyczność procesu, to znaczy, jeżeli wartość $b$
-  jest bliska $1$ to zmniejsza się rygorystyczność i tym samym, liczba rund.
+  jest bliska $1$, to zmniejsza się rygorystyczność i tym samym, liczba rund.
   Najczęściej przyjmowane wartości to: $0.5, 0.7, 0.9, 1$.
   
   \item Obliczany jest stopień konsensusu każdego z ekspertów na każdej
-  alternatywnie:
+  alternatywie:
   \begin{equation}
   C(x_i) = 1 - \sum_{i=1}^{m} \frac{p_k(x_i)}{m}.
   \end{equation}
@@ -428,26 +428,26 @@ Zatem, określanie wskaźników konsensusu odbywa się w następujący sposób:
 Idea dynamicznego wyboru alternatyw została przedstawiona w rozdziale na temat
 modelowania grupowego podejmowania decyzji. W każdym momencie procesu pod uwagę
 brany jest tylko podzbiór wszystkich dostępnych rozwiązań. Są to alternatywy, na
-które oddano głosy lub które zostały eksplicite dodane to procesu przez
+które oddano głosy lub które zostały eksplicite dodane do procesu przez
 ekspertów.
 
 Metoda wyboru alternatyw dzieli się na dwie fazy:
-\begin{description}
-  \item[Usunięcie alternatyw] Faza zarządzająca rozwiązaniami, które znajdują
-  się w zbiorze możliwych rozwiązań, ale z przyczyn zewnętrznych nie są w danym
-  momencie dostępne albo zostały słabo ocenione i mają niski stopień dominacji
-  (QGDD), tzn. poniżej ustalonego minimalnego wskaźnika dominacji. W takim
-  przypadku system sprawdza czy są dostępne nowe alternatywy lub, jeżeli nie ma
-  takich, czy wcześniej odrzucone rozwiązania są ponownie dostępne. Następnie
-  system przedstawia rekomendację zamiany i prosi o akceptację ze strony
-  ekseprtów. W przypadku niedostępności rozwiązania i braku zamienników, jest
-  ono usuwane ze zbioru bez potwierdzenia.
+  \subsubsection{Faza I: Usunięcie alternatyw} 
+  Faza zarządzająca rozwiązaniami, które znajdują się w zbiorze możliwych
+  rozwiązań, ale z przyczyn zewnętrznych nie są w danym momencie dostępne albo
+  zostały słabo ocenione i mają niski stopień dominacji (QGDD), tzn. poniżej
+  ustalonego minimalnego wskaźnika dominacji. W takim przypadku system sprawdza
+  czy są dostępne nowe alternatywy lub, jeżeli nie ma takich, czy wcześniej
+  odrzucone rozwiązania są ponownie dostępne. Następnie system przedstawia
+  rekomendację zamiany i prosi o akceptację ze strony ekseprtów. W przypadku
+  niedostępności rozwiązania i braku zamienników, jest ono usuwane ze zbioru bez
+  potwierdzenia.
   
-  \item[Dodanie alternatyw] Faza odpowiedzialna za sytuację, w której w czasie
-  dyskusji zostało zaproponowane całkowicie nowe rozwiązanie. W tym przypadku
-  eksperci informowani są o pojawieniu się nowej alternatywy, która będzie brana
-  pod uwagę po pierwszej ocenie preferencji przez któregoś z ekspertów.
-\end{description} 
+  \subsubsection{Faza II: Dodanie alternatyw}
+  Faza odpowiedzialna za sytuację, w której w czasie dyskusji zostało
+  zaproponowane całkowicie nowe rozwiązanie. W tym przypadku eksperci
+  informowani są o pojawieniu się nowej alternatywy, która będzie brana pod
+  uwagę po pierwszej ocenie preferencji przez któregoś z ekspertów.
 
 \subsection{Informacja zwrotna}
 W celu ułatwienia dyskusji oraz osiągniecia konsensusu, system wspomagania
@@ -476,10 +476,10 @@ zasadach:
 Dla wybranego na podstawie powyższych zasad zbioru ekspertów generowane są
 następujące rekomendacje w języku naturalnym:
 \begin{itemize}
-  \item Jeżeli miara bliskości eksperta dla alternatywy $p_i(x_j)$ jest dodatnia
-  to system wygeneruje rekomendację: ,,Zmniejsz wartości preferencji dla
-  alternatywy $x_j$''.
-  \item Jeżeli miara bliskości eksperta dla alternatywy $p_i(x_j)$ jest ujemna
+  \item Jeżeli miara bliskości eksperta dla alternatywy $p_i(x_j)$ jest
+  dodatnia, to system wygeneruje rekomendację: ,,Zmniejsz wartości preferencji
+  dla alternatywy $x_j$''.
+  \item Jeżeli miara bliskości eksperta dla alternatywy $p_i(x_j)$ jest ujemna,
   to system wygeneruje rekomendację: ,,Zwiększ wartości preferencji dla
   alternatywy $x_j$''.
 \end{itemize}
