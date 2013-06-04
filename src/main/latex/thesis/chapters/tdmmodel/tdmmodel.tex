@@ -41,7 +41,7 @@ nawet kłótnie. Sam fakt świadomości, że w modelu jest miejsce na wymianę z
 może znacząco przyczynić się do osiągnięcia konsensusu przez grupę.
 
 \section{Zasada działania}
-Zaprponowany w tej pracy system wspomagania decyzji grupowej ma za zadanie
+Zaproponowany w tej pracy system wspomagania decyzji grupowej ma za zadanie
 poprowadzić grupę przez cały proces oraz ułatwić osiągnięcie konsensusu i
 wybranie optymalnego rozwiązania. W związku z opisaną powyżej organizacją pracy
 grupy, ważnym elementem systemu jest moduł dyskusji. Eksperci mają możliwość
@@ -186,7 +186,7 @@ gdzie $F$ jest dowolną funkcją niemalejącą.
 Przykładowa funkcja spełniająca powyższe twierdzenie zaproponowana w [10] oraz
 wykorzystywana w przedstawianym systemie wygląda następująco:
 \begin{equation}
-f^2(u^k_i,u^k_j) = \frac{(u^k_i)^2}{(u^k_i)^2 + (u^k_j)^2}.
+f^2(o^k(i),o^k(j)) = \frac{1}{2}(1 + \frac{o^k(j) - o^k(i) }{n-1}).
 \end{equation}
 
 \subsubsection{Multiplikatywna relacja preferencji a relacja rozmyta}
@@ -199,12 +199,10 @@ jest multiplikatywną relacją preferencji oraz
 $$P' = \{ P^k = [p^k_{ij}] : p^k_{ij} + p^k_{ji} = 1, p^k_{ij} \in
 [0,1], k= 1, \dotsc, m \}$$
 jest rozmytą relacją preferencji, to szukana funkcja transformacji ma postać:
-\todo{FIXME: niepoprawny wzor}
-$$P' = \{ P^k = [p^k_{ij}] : p^k_{ij} + p^k_{ji} = 1, p^k_{ij} \in
-[0,1], k= 1, \dotsc, m \}.$$ 
+$$F : A' \rightarrow P',\; F(A^k) = P^k \;\; \forall k.$$ 
 Ta klasa funkcji jest równoważna klasie funkcji spełniających
-$$F : A' \rightarrow P',\; F(A^k) = P^k \; \forall k,$$
-$$ f(x)+f(\frac{1}{x})=1 \text{ oraz } f(9)=1.$$
+$$f : [1/9, 9] \rightarrow [0,1],$$
+$$ f(x)+f(1/x)=1 \text{ oraz } f(9)=1.$$
 Funkcja $f$ może być zapisana w postaci $f(x) = \frac{1}{2} + h(x)$, co
 implikuje $h(x) + h(\frac{1}{x}) = 0 $ oraz $h(9) = \frac{1}{2}.$
 
@@ -224,7 +222,7 @@ $\mathcal{X} = \{x_1,\dotsc,x_n\}$, stopień preferencji alternatywy $x_i$ nad
 $x_j$ ($p^k_{ij}$) otrzymywany jest przy użyciu następującej funkcji
 transformacji:
 \begin{equation}
-p^k_{ij} = f^3(a^k_{ij}) = \frac{1}{2}(1 + \log_9 a^k_{ij}).
+f^3(a^k_{ij}) = \frac{1}{2}(1 + \log_9 a^k_{ij}).
 \end{equation}
 \end{theorem}
 
@@ -355,17 +353,18 @@ pozycja alternatywy $x_i$ w rozwiązaniu $k-tego$ eksperta oraz globalnym
 rozwiązaniem $V^c = (V^c_1, \dotsc, V^c_n)$, gdzie $V^c_i$ to pozycja
 alternatywy $x_i$ w globalnym rozwiązaniu. W tym celu można korzystać z wielu
 różnych metod, takich jak na przykład odległość euklidesowa albo kosinus i sinus
-kąta między wektorami. W tym modelu wykorzystywana jest rzeczywista\todo{jaka
-rzeczywista} w wektorze preferencji, ponieważ identyczne rankingi alternatyw
-mogą mieć przypisane różne wektory stopni wyboru. Jako przykład rozpatrzone zostaną dwa
-wektory uporządkowania alternatyw: $[(3;0.8), (1;1), (2;0.9), (4;0.4)]$ oraz
-$[(3;0.4), (1;0.8), (2;0.5), (4;0.1)]$, gdzie $(3; 0.4)$ w drugim wektorze
-oznacza, że pierwsza alternatywa jest na trzeciej pozycji ze stopniem wyboru
-$0.4$. Zatem, w obu wektorach pierwsza alternatywa jest na trzeciej pozycji, ale
-w każdym z innym stopniem wyboru. Gdyby używać stopni wyboru przy porównywaniu
-konsensusu to można by mówić o pełnym konsensusie, co jest w rzeczywistości
-bardzo trudne do osiągnięcia. Tym bardziej, że w systemie wykorzystywane są
-różne metody wprowadzania preferencji.
+kąta między wektorami. Zazwyczaj proponowane metody bazują nie tylko na pozycji,
+ale również na wartości stopnia wyboru, W tym modelu wykorzystywana jest
+tylko rzeczywista pozycja w wektorze preferencji, ponieważ identyczne rankingi
+alternatyw mogą mieć przypisane różne wektory stopni wyboru. Jako przykład
+rozpatrzone zostaną dwa wektor uporządkowania alternatyw: $[(3;0.8), (1;1),
+(2;0.9), (4;0.4)]$ oraz $[(3;0.4), (1;0.8), (2;0.5), (4;0.1)]$, gdzie $(3; 0.4)$
+w drugim wektorze oznacza, że pierwsza alternatywa jest na trzeciej pozycji ze
+stopniem wyboru $0.4$. Zatem, w obu wektorach pierwsza alternatywa jest na
+trzeciej pozycji, ale w każdym z innym stopniem wyboru. Gdyby używać stopni
+wyboru przy porównywaniu konsensusu to można by mówić o pełnym konsensusie, co
+jest w rzeczywistości bardzo trudne do osiągnięcia. Tym bardziej, że w systemie
+wykorzystywane są różne metody wprowadzania preferencji.
 
 Zatem, określanie wskaźników konsensusu odbywa się w następujący sposób:
 \begin{enumerate}
@@ -384,10 +383,10 @@ Zatem, określanie wskaźników konsensusu odbywa się w następujący sposób:
   jest bliska $1$, to zmniejsza się rygorystyczność i tym samym, liczba rund.
   Najczęściej przyjmowane wartości to: $0.5, 0.7, 0.9, 1$.
   
-  \item Obliczany jest stopień konsensusu każdego z ekspertów na każdej
-  alternatywie:
+  \item Obliczany jest stopień konsensusu wszystkich ekspertów dla każdej
+  alternatywy:
   \begin{equation}
-  C(x_i) = 1 - \sum_{i=1}^{m} \frac{p_k(x_i)}{m}.
+  C(x_i) = 1 - \sum_{k=1}^{m} \frac{p_k(x_i)}{m}.
   \end{equation}
   
   \item Miara konsensusu nad zbiorem alternatyw $C_{\mathcal{X}}$ obliczana jest
@@ -413,11 +412,11 @@ Zatem, określanie wskaźników konsensusu odbywa się w następujący sposób:
   wpływ.
   
   \item Miara bliskości indywidualnego zbioru rozwiązań $i$-tego eksperta do
-  rozwiązania zbiorczego, oznaczana $P^i_{\mathcal{X}}$, obliczana jest
+  rozwiązania zbiorczego, oznaczana $P^k_{\mathcal{X}}$, obliczana jest
   analogicznie do miary konsensusu.
   \begin{equation}
-  C_{\mathcal{X}} = S_{OWA \; OR\_LIKE}(\{ 1 - |p_i(x_s)|; x_s \in
-  \mathcal{X}_{sol}\}, \{ 1 - |p_i(x_t)|; x_t \in \mathcal{X} -
+  P^k_{\mathcal{X}} = S_{OWA \; OR\_LIKE}(\{ 1 - |p_k(x_s)|; x_s \in
+  \mathcal{X}_{sol}\}, \{ 1 - |p_k(x_t)|; x_t \in \mathcal{X} -
   \mathcal{X}_{sol} \})
   \end{equation}
   Kiedy miara bliskości eksperta jest bliska jedności, oznacza to, że jego wkład
@@ -463,8 +462,8 @@ konsensusu, na których podstawie można stworzyć rekomendacje nakłaniające d
 zmiany opinii oraz zawężenia stanowiska. Informacja zwrotna bazuje na prostych
 zasadach:
 \begin{enumerate}
-  \item Każdy expert $e_i$ jest klasyfikowany za pomocą obliczonej wcześniej
-  miary bliskości $P^i_{\mathcal{X}}$, co daje informację na temat stanowiska
+  \item Każdy expert $e_k$ jest klasyfikowany za pomocą obliczonej wcześniej
+  miary bliskości $P^k_{\mathcal{X}}$, co daje informację na temat stanowiska
   eksperta względem każdej alternatywy ze zbioru rozwiązań oraz jego zgodność ze
   wspólną opinią.
   \item Jeżeli ekspert jest wysoko w rankingu to znaczy, że nie powinien
@@ -476,10 +475,10 @@ zasadach:
 Dla wybranego na podstawie powyższych zasad zbioru ekspertów generowane są
 następujące rekomendacje w języku naturalnym:
 \begin{itemize}
-  \item Jeżeli miara bliskości eksperta dla alternatywy $p_i(x_j)$ jest
+  \item Jeżeli miara bliskości eksperta dla alternatywy $p_k(x_j)$ jest
   dodatnia, to system wygeneruje rekomendację: ,,Zmniejsz wartości preferencji
   dla alternatywy $x_j$''.
-  \item Jeżeli miara bliskości eksperta dla alternatywy $p_i(x_j)$ jest ujemna,
+  \item Jeżeli miara bliskości eksperta dla alternatywy $p_k(x_j)$ jest ujemna,
   to system wygeneruje rekomendację: ,,Zwiększ wartości preferencji dla
   alternatywy $x_j$''.
 \end{itemize}
