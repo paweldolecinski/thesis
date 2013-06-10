@@ -10,9 +10,10 @@ zwanej ,,burzy mózgów''. Bardzo dużo osób obawia się, że proces wymknie si
 kontroli i zostanie zatracony sens dyskusji. Niemniej jednak, coś co wydaje się 
 być chaosem, może okazać się wstępem do kreatywności. Dlatego w modelu 
 podejmowania decyzji grupowej powinien być czas na tak zwaną ,,strefę
-rozbieżną'' oraz ,,strefę zbieżną'', a pomiędzy nimi ,,strefę jęku''. Są to
-elementy, które większość isniejących modeli pomija, a tak naprawdę to właśnie
-dyskusja jest kluczem prowadzącym do osiągnięcia konsensus.
+rozbieżną'' oraz ,,strefę zbieżną'', a pomiędzy nimi ,,strefę jęku''
+\cite{Kaner1996}. Są to elementy, które większość isniejących modeli pomija, a
+tak naprawdę to właśnie dyskusja jest kluczem prowadzącym do osiągnięcia
+konsensus.
 
 Strefa rozbieżna to miejsce na myślenie w coraz to szerszym zakresie. Na samym 
 początku grupa przedstawia oczywiste lub dobrze znane (na przykład z 
@@ -37,7 +38,7 @@ zakończenia procesu i wybraniu ich opcji.
 Członkowie grupy, zanim zaczną rozumieć punkt widzenia innych członków, muszą 
 przejść przez fazę walki o integrację nowych, innych podejść do problemu ze 
 swoim samym. Jest to tak zwana „strefa jęku”. Jest to miejsce na dyskusje, a 
-nawet kłótnie. Sam fakt świadomości, że w modelu jest miejsce na wymianę zdań, 
+nawet kłótnie. Sam fakt świadomości, że w procesie jest miejsce na wymianę zdań, 
 może znacząco przyczynić się do osiągnięcia konsensusu przez grupę.
 
 \section{Zasada działania}
@@ -61,8 +62,8 @@ rozdziale, natomiast poniżej przedstawiony został model teoretyczny
 wykorzystujący techniki przedstawione wcześniej.
 
 \section{Model teoretyczny}
-Opisywany model teoretyczny bazuje na modelu przedstawionym w pracy Herrera
-\todo{biblio: Herrera Web DSS} oraz wprowadza kilka udoskonaleń.
+Opisywany model teoretyczny bazuje na modelu przedstawionym w pracy Alonso et
+al. \cite{Alonso2010} oraz wprowadza kilka udoskonaleń.
 
 Jednym z nich jest zrezygnowanie z podejścia iteracyjnego. Oznacza to dużo
 większą dynamikę oraz naturalność procesu. W klasycznym podejściu, system czeka
@@ -82,7 +83,7 @@ modyfikację. W klasycznych modelach na początku ustalana jest maksymalna liczb
 iteracji, po której system powinien zakończyć działanie bezwzględu na wynik.
 Ze względu na specyfikę zagadnienia, system powinien jedynie wspomagać grupę i
 sugerować działania, ale nie podejmować decyzji samodzielnie. To zespół powinien
-decydować, czy osiągniety konsensus jest satysfakcjonujący czy nie, dlatego
+decydować, czy osiągnięty konsensus jest satysfakcjonujący czy nie, dlatego
 proces wspierania decyzji domyślnie jest nieskończony w czasie.
 
 Struktura proponowanego modelu grupowego podejmowania decyzji składa się z
@@ -107,8 +108,8 @@ związku z tym, konieczne jest zunifikowanie uzyskanych informacji przed
 przejściem do dalszych etapów. Ze względu na użyteczność i wygodę w dalszym
 przetwarzaniu informacji, szczególnie przy agregacji ocen ekspertów w ocenę
 zbiorczą, do reprezentacji preferencji w dalszych etapach wybrano rozmytą
-relację preferencji [9]. Aby jednak było możliwe zamienianie poszczególnych
-metod na relację rozmytą, potrzebne są funkcje transformacji.
+relację preferencji \cite{Ma2006}. Aby jednak było możliwe zamienianie
+poszczególnych metod na relację rozmytą, potrzebne są funkcje transformacji.
 
 \subsubsection{Funkcja użyteczności a relacja rozmyta}
 W przypadku funkcji użyteczności zakłada się, że każdy ekspert $e_k$ podaje
@@ -137,9 +138,9 @@ p^k_{ij} = f(u^k_i, u^k_j) =
   \left\{ 
 	\begin{array}{ll}
 	  \frac{s(u^k_i)}{s(u^k_i) + s(u^k_j)} , & \quad \textrm{jeżeli } (u^k_i,u^k_j)
-	  \neq 0 ,
+	  \neq (0,0) ,
 	  \\
-      \frac{1}{2} , & \quad \textrm{jeżeli } (u^k_i,u^k_j) = 0,
+      \frac{1}{2} , & \quad \textrm{jeżeli } (u^k_i,u^k_j) = (0,0),
   	\end{array} 
   \right. (i \neq j) .
 \end{equation}
@@ -147,8 +148,9 @@ gdzie $s : [0,1] \rightarrow \mathbb{R}^+$ jest dowolną niemalejącą i ciągł
 funkcją spełniającą $s(0) = 0.$
 \end{theorem}
 
-Przykładowa funkcja spełniająca powyższe twierdzenie zaproponowana w [10] oraz
-wykorzystywana w przedstawianym systemie wygląda następująco:
+Przykładowa funkcja spełniająca powyższe twierdzenie zaproponowana w
+\cite{Chiclana1996} oraz wykorzystywana w przedstawianym systemie wygląda
+następująco:
 \begin{equation}
 f^1(u^k_i,u^k_j) = \frac{(u^k_i)^2}{(u^k_i)^2 + (u^k_j)^2}
 \end{equation}
@@ -183,21 +185,22 @@ o^k(j))].
 gdzie $F$ jest dowolną funkcją niemalejącą.
 \end{theorem}
 
-Przykładowa funkcja spełniająca powyższe twierdzenie zaproponowana w [10] oraz
-wykorzystywana w przedstawianym systemie wygląda następująco:
+Przykładowa funkcja spełniająca powyższe twierdzenie zaproponowana w
+\cite{Chiclana1996} oraz wykorzystywana w przedstawianym systemie wygląda
+następująco:
 \begin{equation}
 f^2(o^k(i),o^k(j)) = \frac{1}{2}(1 + \frac{o^k(j) - o^k(i) }{n-1}).
 \end{equation}
 
 \subsubsection{Multiplikatywna relacja preferencji a relacja rozmyta}
 Ekspert $e_k$ podaje swoje preferencje poprzez multiplikatywną relację
-preferencji $A^k = [a^k_{ij}]$. W ogólności, zgodnie z propozycją Saaty'ego,
-jeżeli
-$$A' = \{ A^k = [a^k_{ij}] : a^k_{ij} \cdot a^k_{ji} = 1, a^k_{ij} \in
-[^1/_9,9], k= 1, \dotsc, m \}$$ 
+preferencji $A^k = [a^k_{ij}]$. W ogólności, zgodnie z propozycją Saaty'ego
+\cite{Saaty2000}, jeżeli
+$$A' = \{ A^k = [a^k_{ij}] : a^k_{ij} \cdot a^k_{ji} = 1,\;\; a^k_{ij} \in
+[^1/_9,9],\;\; k= 1, \dotsc, m \}$$ 
 jest multiplikatywną relacją preferencji oraz
-$$P' = \{ P^k = [p^k_{ij}] : p^k_{ij} + p^k_{ji} = 1, p^k_{ij} \in
-[0,1], k= 1, \dotsc, m \}$$
+$$P' = \{ P^k = [p^k_{ij}] : p^k_{ij} + p^k_{ji} = 1,\;\; p^k_{ij} \in
+[0,1],\;\; k= 1, \dotsc, m \}$$
 jest rozmytą relacją preferencji, to szukana funkcja transformacji ma postać:
 $$F : A' \rightarrow P',\; F(A^k) = P^k \;\; \forall k.$$ 
 Ta klasa funkcji jest równoważna klasie funkcji spełniających
@@ -215,7 +218,7 @@ $h(x \cdot y) = h(x) + h(y)$, czyli $l(z) = C \cdot \ln z, C \in \mathbb{R}.$
 Skoro $h(9) = \frac{1}{2}$, to $C = \frac{1}{2 \cdot \ln 9}$ oraz $h(z) =
 \frac{1}{2} \frac{\ln z}{\ln 9} = \frac{1}{2} \log_9 z.$
 
-Podsumowując, w [7] otrzymano następujące twierdzenie:
+Podsumowując, w \cite{Chiclana1996} otrzymano następujące twierdzenie:
 \begin{theorem}
 Dla każdej relacji preferencji $A^k = [a^k_{ij}]$ nad zbiorem alternatyw
 $\mathcal{X} = \{x_1,\dotsc,x_n\}$, stopień preferencji alternatywy $x_i$ nad
@@ -236,10 +239,10 @@ przyczyn eksperci mogą wyrazić swoje preferencje względem tylko części
 alternatyw. W takich sytuacjach mówi się o \emph{niepełnej rozmytej relacji
 preferencji}.
 
-W pracy Alonso, Cabrerizo et al. (2009) została przedstawiona metoda estymacji
-brakujących wartości. Zapewnia ona addytywną konsystencję z preferencjami
-podanymi przez eksperta. Jest to iteracyjna procerdura, która w całości została
-zaadoptowana w tej pracy.
+W pracy Alonso, Cabrerizo et al. \cite{Alonso2009} została przedstawiona metoda
+estymacji brakujących wartości. Zapewnia ona addytywną konsystencję z
+preferencjami podanymi przez eksperta. Jest to iteracyjna procerdura, która w
+całości została zaadoptowana w tej pracy.
 
 \subsection{Proces selekcji: agregacja}
 Jest to faza, w której definiowana jest zbiorcza rozmyta relacja preferencji
@@ -252,8 +255,8 @@ jest rozmyta większość wyrażona przez rozmyty kwantyfikator lingwistyczny.
 
 Każda wartość $p^c_{ij}$ jest obliczana przy pomocy operatora agregacji OWA.
 Operator OWA odzwierciedla rozmytą większość obliczając wektor wag przy pomocy
-kwantyfikatora rozmytego. Zatem zbiorcza rozmyta relacja preferencji otrzymywana
-jest w następujący sposób:
+kwantyfikatora rozmytego \cite{Peneva2007}. Zatem zbiorcza rozmyta relacja
+preferencji otrzymywana jest w następujący sposób:
 \begin{equation}
 p^c_{ij} = \Phi_Q(p^1_{ij}, \dotsc, p^m_{ij}).
 \end{equation}
@@ -263,9 +266,14 @@ operatora OWA $\Phi_Q$.
 \subsection{Proces selekcji: eksploatacja}
 W tej fazie przekształcana jest globalna informacja o alternatywach w globalny
 ranking, z której można uzyskać zbiór rozwiązań. Globalny ranking uzyskuje się
-poprzez użycie dwóch stopni wyboru alternatyw: kwantyfikowany stopień dominacji
-(QGDD, ang. quantifier guided dominance degree) oraz kwantyfikowany stopień
-nie-dominacji (QGNDD, ang. quantifier guided non dominance degree).
+poprzez użycie dwóch stopni wyboru alternatyw
+\cite{Herrera1996a,Campanella2011}:
+\begin{itemize}
+  \item kwantyfikowany stopień dominacji QGDD (ang. \textit{quantifier guided
+  dominance degree}) oraz
+  \item kwantyfikowany stopień nie-dominacji QGNDD (ang. \textit{quantifier
+  guided non dominance degree}).
+\end{itemize}
 
 Kwantyfikowany stopień dominacji $QGDD_i$ to wielkość dominacji jaką posiada
 alternatywa $x_i$ nad pozostałymi w sensie rozmytej większości:
@@ -316,8 +324,8 @@ Jest to proces w trakcie którego znalezione rozwiązanie $X_{sol}$ jest
 porównywane z indywidualnymi rozwiązaniami ekspertów. Dzięki temu możliwe jest
 zmierzenie konsensusu, czyli w jakim stopniu eksperci zgadzają się z
 zaproponowanym rozwiązaniem. W prezentowanym modelu grupowego podejmowania
-decyzji, wykorzystywany jest proces konsensusu zaprezentowany w [11]. Model ten
-zawiera następujące główne cechy:
+decyzji, wykorzystywany jest proces konsensusu zaprezentowany w
+\cite{Herrera1995}. Model ten zawiera następujące główne cechy:
 \begin{itemize}
   \item Jest oparty na dwóch kryteriach konsensusu: globalna miara konsensusu
   nad zbiorem alternatyw $\mathcal{X}$ oznaczana jako $C_{\mathcal{X}}$ oraz
@@ -347,7 +355,7 @@ konsensusu, preferencje ekspertów muszą ulec modyfikacji.
 
 \subsection{Proces konsensusu: wskaźniki konsensusu}
 Każdy z parametrów konsensusu wymaga wykorzystania funkcji odległości
-$d(V^k,V^c)$, aby uzyskać poziom porozumienia pomiędzy indywidualnym
+$d(V^k,$ $V^c)$, aby uzyskać poziom porozumienia pomiędzy indywidualnym
 rozwiązaniem eksperta $e_k$, $V^k = (V^k_1, \dotsc, V^k_n)$, gdzie $V^k_i$ to
 pozycja alternatywy $x_i$ w rozwiązaniu $k-tego$ eksperta oraz globalnym
 rozwiązaniem $V^c = (V^c_1, \dotsc, V^c_n)$, gdzie $V^c_i$ to pozycja
@@ -366,7 +374,8 @@ wyboru przy porównywaniu konsensusu to można by mówić o pełnym konsensusie,
 jest w rzeczywistości bardzo trudne do osiągnięcia. Tym bardziej, że w systemie
 wykorzystywane są różne metody wprowadzania preferencji.
 
-Zatem, określanie wskaźników konsensusu odbywa się w następujący sposób:
+Zatem, określanie wskaźników konsensusu odbywa się w następujący sposób
+\cite{Herrera-Viedma2002}:
 \begin{enumerate}
   \item Obliczana jest bliskość każdego eksperta dla każdej alternatywy
   porównując pozycję danej alternatywy w rozwiązaniu eksperta oraz zbiorczym.
@@ -458,9 +467,9 @@ konsensusu nie osiągnął wymaganego poziomu, określonego przed rozpoczęciem
 procesu decyzyjnego, opinie ekspertów mogą być modyfikowane.
 
 Do zbudowania mechanizmu informacji zwrotnej wykorzystywane są wskaźniki
-konsensusu, na których podstawie można stworzyć rekomendacje nakłaniające do
-zmiany opinii oraz zawężenia stanowiska. Informacja zwrotna bazuje na prostych
-zasadach:
+konsensusu \cite{Perez2011}, na których podstawie można stworzyć rekomendacje
+nakłaniające do zmiany opinii oraz zawężenia stanowiska. Informacja zwrotna
+bazuje na prostych zasadach:
 \begin{enumerate}
   \item Każdy expert $e_k$ jest klasyfikowany za pomocą obliczonej wcześniej
   miary bliskości $P^k_{\mathcal{X}}$, co daje informację na temat stanowiska

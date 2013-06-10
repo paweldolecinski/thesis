@@ -9,11 +9,11 @@ przy pomocy jednego kryterium lub jednej osoby. Dlatego też, proces decyzyjny
 rozpatrywany jest jako grupowe podejmowanie decyzji.
 
 Niezaprzeczalnym faktem jest, że problemy stawiane grupie w większości pochodzą 
-z życia wziętych sytuacji. W tych problemach jest do dyspozycji zbiór alternatyw
-rozwiązujących problem oraz grupa ekspertów, cechująca się doświadczeniem i 
-wiedzą, która stara się osiągnąć wspólne rozwiązanie. Aby rozwiązać problem, 
-eksperci muszą przejść przez dwa etapy: proces osiągania konsensusu oraz proces 
-selekcji.
+z sytuacji z życia wziętych. W tych problemach jest do dyspozycji zbiór
+alternatyw rozwiązujących problem oraz grupa ekspertów, cechująca się
+doświadczeniem i wiedzą, która stara się osiągnąć wspólne rozwiązanie. Aby
+rozwiązać problem, eksperci muszą przejść przez dwa etapy: proces osiągania
+konsensusu oraz proces selekcji.
 
 W poniższym rozdziale te dwa etapy zostaną dokładnie opisane. Przedstawiony
 będzie model iteracyjny, który wykorzystuje proces osiągania konsensusu i proces
@@ -23,19 +23,20 @@ w procesie podejmowania decyzji oraz propozycje poradzenia sobie z tym.
 \section{Model iteracyjny}
 W grupowym podejmowaniu decyzji można wyróżnić dwa procesy prowadzące do
 uzyskania ostatecznego rozwiązania: proces osiągania konsensusu oraz proces
-selekcji. Pierwszy zajmuje się osiągnięciem maksymalnie najwyższego porozumienia
-pomiędzy ekspertami. Zwykle proces ten prowadzony jest przez tak zwanego
-moderatora i jest  wykonywany przed procesem selekcji. Proces porozumienia jest
-bardzo ważnym krokiem, ponieważ wspomaga uzyskanie rozwiązań o wysokim stopniu
-konsensusu wśród  ekspertów, co zazwyczaj jest pożądaną własnością. Drugi proces
-odnosi się do sposobu uzyskania zbioru alternatyw jako rozwiązań z opinii oraz
-ocen każdej z alternatyw przedstawionych przez ekspertów.
+selekcji \cite{Herrera1996,Alonso2009}. Pierwszy zajmuje się osiągnięciem
+maksymalnie najwyższego porozumienia pomiędzy ekspertami. Zwykle proces ten
+prowadzony jest przez tak zwanego moderatora i jest wykonywany przed procesem
+selekcji. Proces porozumienia jest bardzo ważnym krokiem, ponieważ wspomaga
+uzyskanie rozwiązań o wysokim stopniu konsensusu wśród  ekspertów, co zazwyczaj
+jest pożądaną własnością. Drugi proces odnosi się do sposobu uzyskania zbioru
+alternatyw jako rozwiązań z opinii oraz ocen każdej z alternatyw przedstawionych
+przez ekspertów.
 
 \subsection{Definicja problemu}
 Przed przystąpieniem do poszczególnych kroków trzeba formalnie zdefiniować 
 problem. Z punktu widzenia modelu, nie jest to opis czy postawione pytanie. 
 Typowy wieloosobowy, wielokryteriowy problem składa się z następujących 
-elementów:
+elementów \cite{Ekel2009}:
 
 \begin{description}
   \item[Zbiór alternatyw $ \mathcal{X} = \{ x_1, \dotsc, x_n \}.$] Zbiór
@@ -99,7 +100,8 @@ dynamiczny proces iteracyjny i obejmuje następujący skończony zbiór kroków:
 \end{enumerate}
 
 Warto zwrócić uwagę, że tak zdefiniowany proces konsensusu może przypominać 
-klasyczną metodę delficką. Jednakże istnieje kilka istotnych różnic:
+klasyczną metodę delficką \cite{Helmer-Hirschberg1967}. Jednakże istnieje kilka
+istotnych różnic:
 \begin{itemize}
   \item W metodzie delfickiej ostatecznym celem jest prognozowanie, podczas gdy 
   powyższe podejście próbuje znaleźć najlepszą alternatywę z zestawu możliwych.
@@ -118,8 +120,8 @@ preferencji ekspertów. Temu tematowi poświęcony jest osobny rozdział.
 Etap ten na wejściu dostaje oceny wszystkich ekspertów i jest odpowiedzialny za 
 podanie kolejności rozwiązań. Proces selekcji można różnie definiować, w 
 zależności od dokładnego umiejscowienia w modelu oraz zakresu odpowiedzialności 
-procesu konsensusu. Zgodnie z Chiclana et al. [7] proces selekcji jest
-podzielony na dwie fazy:
+procesu konsensusu. Zgodnie z Chiclana et al. \cite{Chiclana1998,Chiclana2001}
+proces selekcji jest podzielony na dwie fazy:
 \begin{enumerate}
   \item Faza agregacji
   
@@ -138,18 +140,19 @@ podzielony na dwie fazy:
 Moderator jest osobą niebiorącą udziału w dyskusji w sposób bezpośredni. Jego
 zadaniem jest kierowanie grupą, analizowanie wyników głosowań i na ich podstawie
 wpływanie na na opinie ekspertów tak, aby został osiągnięty jak największy 
-stopień konsensusu. Jak część modelu wprowadzony zostaje mechanizm informacji 
+stopień konsensusu. Jako część modelu wprowadzony zostaje mechanizm informacji 
 zwrotnej, który ma zastąpić osobę moderatora i zautomatyzować proces. Mechanizm 
 składa się z kilku prostych zasad, które generują rekomendacje dla ekspertów. 
 Aby to osiągnąć, wykorzystywane są miary przybliżone w połączeniu ze stopniem 
-konsensusu. Na końcu, porady muszą zostać przedstawione w sposób czytelny dla 
-człowieka, żeby eksperci mogli je wykorzystać do zmiany swoich poglądów.
+konsensusu \cite{Herrera1995}. Na końcu, porady muszą zostać przedstawione w
+sposób czytelny dla człowieka, żeby eksperci mogli je wykorzystać do zmiany
+swoich poglądów.
 
 \section{Dynamika: zbiór alternatyw}
-Zazwyczaj metody rozwiązywania problemów grupowych są statyczne. Oznacza to 
-założenie, że liczba alternatyw oraz ekspertów przez cały proces decyzyjny jest 
-stała. Jednak w rzeczywistych sytuacjach okazuje się, że proces może być 
-dynamiczny.
+Zazwyczaj metody rozwiązywania problemów grupowych są statyczne
+\cite{Perez2010}. Oznacza to założenie, że liczba alternatyw oraz ekspertów
+przez cały proces decyzyjny jest stała. Jednak w rzeczywistych sytuacjach
+okazuje się, że proces może być dynamiczny.
 
 Szczególnie częstym zjawiskiem jest dynamika zbioru alternatyw. Typowym 
 przykładem takiej sytuacji jest diagnoza lekarska. Środowisko to jest dynamiczne
@@ -202,7 +205,7 @@ podejmowania decyzji i należy je rozpatrywać osobno.
 
 W przypadku pojawienia się nowego eksperta należy zastanowić się nad kilkoma
 rzeczami. Po pierwsze, taka osoba powinna zostać zaakceptowana przez grupę.
-Jedną z możliwości jest wysłanie zaproszenia przez jednego z członków. Takie
+Jed\-ną z możliwości jest wysłanie zaproszenia przez jednego z członków. Takie
 zaproszenie powinno wcześniej zostać zatwierdzone przynajmniej przez większość
 grupy. Druga możliwość to chęć dołączenia do procesu ze strony nowej osoby bez
 wiedzy grupy. W tym przypadku, system musi informować grupę o zaistniałej

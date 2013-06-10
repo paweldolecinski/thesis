@@ -7,20 +7,21 @@ bardzo wysoki poziom i jest wciąż poszerzany.
 
 Dynamiczny rozwój, początkowo niezauważonej teorii, nastąpił w drugiej połowie 
 lat 70-tych rozwiązaniem problemu sterowania piecem do wytwarzania cementu 
-wykorzystując logikę rozmytą (Mamdani). Jednak dopiero udane implementacje w 
-Japonii zapoczątkowały zainteresowanie na szeroką skalę. Do najgłośniejszych 
-sukcesów należy opracowanie układu sterowania metrem w mieście Sendai. Dzięki 
-wnioskowaniu rozmytym udało się zmniejszyć czasy opóźnień oraz koszty utrzymania.
+wykorzystując logikę rozmytą \cite{Mamdani1974}. Jednak dopiero udane
+implementacje w Japonii zapoczątkowały zainteresowanie na szeroką skalę. Do
+najgłośniejszych sukcesów należy opracowanie układu sterowania metrem w mieście
+Sendai. Dzięki wnioskowaniu rozmytym udało się zmniejszyć czasy opóźnień oraz
+koszty utrzymania.
 
 W ciągu ostatnich dekad teoria zbiorów rozmytych rozwinęła się w dwóch liniach:
 \begin{enumerate}[1)]
   
-  \item Jako formalna teoria, która stała się bardziej wyrafinowana i została 
+  \item jako formalna teoria, która stała się bardziej wyrafinowana i została 
   powiększona o szereg oryginalnych pomysłów i koncepcji, które obejmują obszary 
   klasycznej matematyki (m. in. algebra, teoria grafów, topologia) uogólniając
-  je lub ,,rozmywając''.
+  je lub ,,rozmywając'';
   
-  \item Jako zorientowana na zastosowania ,,rozmyta technologia'', czyli
+  \item jako zorientowana na zastosowania ,,rozmyta technologia'', czyli
   narzędzie do między innymi modelowania, rozwiązywania problemów, data mining. 
   W wielu przypadkach udowodniono przewagę zbiorów rozmytych nad istniejącymi 
   metodami, a w innych okazały się one atrakcyjnym dodatkiem do klasycznych 
@@ -42,8 +43,8 @@ zbiorów, z każdym zbiorem $A$ powiązana jest \emph{funkcja charakterystyczna}
 $$ \mathcal{X}_A(x) = 
   \left\{ 
 	\begin{array}{ll}
-	  0, & \quad \textrm{gdy } x \notin A, \\
-      1, & \quad \textrm{gdy } x \in A,
+	0, & \quad \textrm{gdy } x \notin A, \\
+	1, & \quad \textrm{gdy } x \in A,
   	\end{array} 
   \right. $$  
 która dla dowolnego elementu $x$  w uniwersum $\mathcal{X}$ przyjmuje wartość
@@ -72,7 +73,7 @@ się nie podoba, ale jest skłonna tam pójść.
 Pomimo tego, że człowiek doskonale radzi sobie z odpowiedziami typu: ,,bardzo'',
 ,,około'', ,,mało'', ,,mniej więcej'', itp. to próba ich wyrażenia za pomocą
 tradycyjnych zbiorów skazana jest na porażkę. Obserwacja ta była podstawą dla
-Zadeha wprowadzenia pojęcia zbioru nieostrego (rozmytego).
+Zadeha wprowadzenia pojęcia zbioru nieostrego (rozmytego) \cite{zadeh1965fuzzy}.
 
 \begin{definition}[Zbiór rozmyty]
 Jeżeli $\mathcal{X}$ jest kolekcją obiektów to zbiór rozmyty $A$ w przestrzeni
@@ -103,7 +104,7 @@ Ze zbiorami rozmytymi wiąże się kilka przydatnych pojęć przedstawionych pon
 \begin{equation}
   \mathrm{supp}(A) = \{ x \in \mathcal{X} : A(x) > 0 \}.
 \end{equation}
-nazywamy \emph{nośnikiem} (ang. support) zbioru nieostrego.
+nazywamy \emph{nośnikiem} (ang. \textit{support}) zbioru nieostrego.
 Nośnik zbioru to inaczej zbiór tych elementów $x$, które mają znaczenie dla $A$.  
 \end{definition}
 
@@ -169,8 +170,9 @@ W klasycznej teorii mnogości podstawowe operacje na zbiorach to: dopełnienie,
 suma, iloczyn. Nie inaczej jest w przypadku zbiorów rozmytych, ale wszystkie te
 operacje można zdefiniować na wiele sposobów.
 
-W swojej pierwszej publikacji, Zadeh zdefiniował podstawowe operacje,
-generalizujące operacje dla zbiorów ostrych, w następujący sposób:
+W swojej pierwszej publikacji, Zadeh \cite{zadeh1965fuzzy} zdefiniował
+podstawowe operacje, generalizujące operacje dla zbiorów ostrych, w następujący
+sposób:
 
 \begin{definition}
 Dopełnienie zbioru rozmytego $A$ określa się jako zbiór rozmyty, którego funkcja
@@ -210,8 +212,7 @@ triangularną} (krótko: \emph{t-normą}) jeżeli:
   t(b,c),$$
   \item funkcja $t$ spełnia warunek przemienności $$t(a,b) = t(b,a),$$
   \item funkcja $t$ spełnia warunek łączności $$t(a, t(b,c)) = t(t(a,b),c),$$
-  \item funkcja $t$ spełnia warunki brzegowe $$t(a,0)=0 \textrm{ oraz }
-  t(a,1)=a,$$
+  \item funkcja $t$ spełnia warunek brzegowy $$t(a,1)=a,$$
 \end{itemize}
 gdzie $a, b, c \in [0,1]$.
 \end{definition}
@@ -231,8 +232,7 @@ triangularną} (krótko: \emph{t-konormą}) jeżeli:
   s(b,c),$$
   \item funkcja $s$ spełnia warunek przemienności $$s(a,b) = s(b,a),$$
   \item funkcja $s$ spełnia warunek łączności $$s(a, s(b,c)) = s(s(a,b),s),$$
-  \item funkcja $s$ spełnia warunki brzegowe $$s(a,0)=a \textrm{ oraz }
-  s(a,1)=1,$$
+  \item funkcja $s$ spełnia warunek brzegowy $$s(a,0)=a,$$
 \end{itemize}
 gdzie $a, b, c \in [0,1]$.
 \end{definition}
@@ -321,8 +321,8 @@ spełniające następujące warunki:
 \end{definition}
 
 Jednymi z najbardziej popularnych i najczęściej wykorzystywanych jest rodzina
-operatorów uporządkowanej średniej ważonej OWA (ang. Ordered Weighted
-Averaging).
+operatorów uporządkowanej średniej ważonej OWA (ang. \textit{Ordered Weighted
+Averaging}).
 
 \begin{definition}
 Operator OWA wymiaru $n$ jest to odwzorowanie $U : [0,1]^n \rightarrow [0,1]$
@@ -451,10 +451,10 @@ grupy.
 Po fazie agregacji następuje faza eksploatacji uzyskanych danych, czyli moment,
 w którym ocena globalna alternatyw zamieniana jest na globalny ranking. Globalny
 ranking uzyskuje się poprzez użycie dwóch stopni wyboru alternatyw:
-kwantyfikator stopnia dominacji (QGDD, ang. quantifier guided dominance degree)
-oraz kwantyfikator stopnia nie-dominacji (QGNDD, ang. quantifier guided non
-dominance degree). Pierwszy z nich jest używany, aby uzyskać przewagę jaką
-posiada dana alternatywa nad pozostałymi w kontekście rozmytej większości. Drugi
+kwantyfikator stopnia dominacji QGDD (ang. \textit{quantifier guided dominance
+degree}) oraz kwantyfikator stopnia nie-dominacji QGNDD (ang.
+\textit{quantifier guided non dominance degree}). Pierwszy z nich jest używany,
+aby uzyskać przewagę jaką posiada dana alternatywa nad pozostałymi w kontekście rozmytej większości. Drugi
 kwantyfikator natomiast, podaje stopień w jakim każda z alternatyw nie jest
 zdominowana przez rozmytą większość zbioru alternatyw. Sposób w jaki należy
 połączyć te dwie informacje w celu uzyskania rankingu jest opisany w kolejnych

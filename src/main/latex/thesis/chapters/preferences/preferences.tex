@@ -6,7 +6,7 @@ osiągnąć konsensus i przedstawić propozycje rozwiązań problemu, trzeba poz
 zdanie decydentów na temat każdej z alternatyw. Okazuje się, że nie jest to 
 łatwe zadanie, ponieważ każdy z ekspertów posiada swoje własne idee, cele, 
 motywacje i osobowość. Prowadzi to do wniosku, że różne osoby mogą wyrażać 
-swoje preferencje na różne sposoby.
+swoje opinie na różne sposoby.
 
 W tym rozdziale zostanie przedstawiony ogólny model poznawania preferencji. 
 Następnie wprowadzone zostaną klasyczne sposoby reprezentacji. Warto zwrócić 
@@ -21,12 +21,12 @@ wykorzystujące zbiory rozmyte.
 Scenariusz idealny zakłada poproszenie użytkowników o wyrażenie swoich 
 preferencji na temat różnych cech ocenianego problemu. W praktyce ma to jednak 
 ograniczone zastosowanie, a także nie zawsze jest to możliwe. Obiecującym 
-źródłem odkrywania preferencji mogą być komentarze użytkowników. Ogólny schemat 
-odkrywania i przetwarzania preferencji przedstawiony jest na rysunku
-\ref{fig:ogolny_model_preferencji}.
+źródłem odkrywania preferencji mogą być komentarze użytkowników.
 
-Schemat zaproponowany przez Zenebe et al. [8] składa się z czterech głównych 
-elementów: wydobycie i prezentacja cech, odkrycie preferencji, reprezentacja 
+Ogólny schemat odkrywania i przetwarzania preferencji zaproponowany przez
+Zenebe et al. \cite{Zenebe2010} przedstawiony jest na rysunku
+\ref{fig:ogolny_model_preferencji}. Składa się z czterech głównych
+elementów: wydobycie i prezentacja cech, odkrycie preferencji, reprezentacja
 preferencji, zastosowanie wydobytych informacji.
 
 \begin{figure}[ht]
@@ -53,13 +53,13 @@ pomocy relacji preferencji $A^k \subset X \times X, A^k = a^k_{ij}$, gdzie
 $a^k_{ij}$ wskazuje stopień intensywności preferencji alternatywy $x_i$ do
 $x_j$. Innymi słowy, alternatywa $x_i$ jest $a^k_{ij}$ razy tak dobra jak $x_j$.
 
-Nawiązując do pracy Millera \todo{bibl} nad postrzeganiem liczb, Saaty w swojej
-pracy \todo{bibl} sugeruje używania w takich sytuacjach skali od $1$ do $9$.
-Zatem $a^k_{ij} = 1$ interpretuje się jako obojętność lub brak różnicy dla
-eksperta pomiędzy rozwiązaniami $x_i$ oraz $x_j$, $a^k_{ij}=9$ oznacza, że $x_i$
-jest zdecydowanie bardziej preferowane niż $x_j$, natomiast $a^k_{ij} \in \{
-2,3, \dotsc, 8\}$ oznacza oceny pośrednie. Z reguły zakłada się, że relacja jest
-wzajemnie odwrotna, czyli $\forall_{i,j} \, a^k_{ij} \cdot a^k_{ji} = 1$.
+Nawiązując do pracy Millera \cite{Miller1993} nad postrzeganiem liczb, Saaty w
+swojej pracy \cite{Saaty2000} sugeruje używania w takich sytuacjach skali od $1$
+do $9$. Zatem $a^k_{ij} = 1$ interpretuje się jako obojętność lub brak różnicy
+dla eksperta pomiędzy rozwiązaniami $x_i$ oraz $x_j$, $a^k_{ij}=9$ oznacza, że
+$x_i$ jest zdecydowanie bardziej preferowane niż $x_j$, natomiast $a^k_{ij} \in
+\{ 2,3, \dotsc, 8\}$ oznacza oceny pośrednie. Z reguły zakłada się, że relacja
+jest wzajemnie odwrotna, czyli $\forall_{i,j} \, a^k_{ij} \cdot a^k_{ji} = 1$.
 
 \subsection{Funkcja użyteczności}
 Użyteczność to inaczej zdolność dobra do zaspokajania potrzeb. Określa
@@ -70,13 +70,14 @@ przedstawia ocenę każdej z alternatyw zgodnie z użytecznością z jego punktu
 widzenia. Formalnie, ekspert $e_k$ podaje swoje preferencje dla zbioru
 alternatyw $\mathcal{X}$ jako zbiór $n$ wartości użyteczności $U^k = \{u^k_i;
 i=1,\dotsc,n\}, u^k_i \in [0,1]$, gdzie $u^k_i$ reprezentuje wartość
-użyteczności alternatywy $x_i$ daną przez eksperta $e_k$.
+użyteczności alternatywy $x_i$ daną przez eksperta $e_k$ \cite{Tanino1990}.
 
 \section{Metody oparte na zbiorach rozmytych}
 Teoria zbiorów rozmytych jest stosowana w grupowym podejmowaniu decyzji już od 
-długiego czasu \todo{biblio}. Większość modeli opracowanych w literaturze jest 
+długiego czasu. Większość modeli opracowanych w literaturze jest 
 opartych na rozmytej relacji preferencji, która może być uzyskana poprzez 
-porównania pomiędzy parami różnych alternatyw przez ekspertów.
+porównania pomiędzy parami różnych alternatyw przez ekspertów
+\cite{Xu2007,Xu2008,Chiclana1996,Peneva2008}.
 
 Z drugiej strony, wiele problemów dotyczy ilościowych aspektów, które mogą być 
 ocenione przy użyciu konkretnych wartości liczbowych, czyli z użyciem opisanych 
@@ -92,9 +93,9 @@ językowe, jak ,,dobry'', ,,niezły'', ,,słaby''.
 \begin{definition}
 Rozmyta relacja preferencji $R$ na zbiorze alternatyw $\mathcal{X}$ jest zbiorem
 rozmytym na iloczynie kartezjańskim $X \times X$ z funkcją przynależności
-$\mu_R : X \times X \rightarrow [0,1]$. Niech $P(x_i,x_j) \in R$ będzie rozmytą
-relacją preferencji pomiędzy alternatywami $x_i$ i $x_j$. Wtedy $P(x_i,x_j)$
-oraz $P(x_j,x_i)$ są zwrotne, tzn. $P(x_i,x_j) + P(x_j,x_i) = 1.$
+$\mu_R : X \times X \rightarrow [0,1]$, gdzie $P(x_i,x_j)$
+oraz $P(x_j,x_i)$ są recyprokalne, tzn. $P(x_i,x_j) + P(x_j,x_i) = 1$, a
+$P(x_i,x_j) \in R$ oznacza stopień preferowania alternatywy $x_i$ ponad $x_j$.
 \end{definition}
 
 Niech $\mathcal{X}$ będzie zbiorem alternatyw oraz $x_i,x_j \in \mathcal{X}$.
@@ -107,11 +108,11 @@ $p^k_{ij} = 0.5$ brak różnicy pomiędzy rozwiązaniami.
 Rozmyta relacja preferencji stosowana jest do modelowania
 nieprecyzyjnej relacji pomiędzy różnymi rozwiązaniami. Aby zredukować uciążliwe
 zadanie przypisywania stopni preferencji pomiędzy alternatywami przez ekspertów
-($q(n-1)/2$ razy), rozmyta relacja preferencji między dwoma alternatywami $x_i$
+($qn(n-1)/2$ razy), rozmyta relacja preferencji między dwoma alternatywami $x_i$
 i $x_j$ dla kryterium $k$ jest obliczana przez porównywanie parami ocen
 lingwistycznych $g^t_k(x_i)$ i $g^t_k(x_j)$, które mogą być opisane jako liczby
 rozmyte (szczegóły w następnym podpunkcie). W ten sposób, liczba ocen ekspertów
-zmniejsza się do $qn$ razy.
+zmniejsza się do $qn$ razy \cite{Wang2003}.
 \begin{figure}[ht]
   \includegraphics[width=\linewidth]
     {chapters/preferences/rozmyta_relacja_a}
@@ -120,13 +121,13 @@ zmniejsza się do $qn$ razy.
 \end{figure}
 W literaturze istnieje wiele sposobów na zdefiniowanie relacji rozmytej pomiędzy
 dwoma liczbami rozmytymi. W tej pracy zostanie użyte podejście Tsenga i Kleina
-\todo{biblio} bazujące na odległości Hamminga ze względu na prostotę i
+\cite{Tseng1989} bazujące na odległości Hamminga ze względu na prostotę i
 wydajność.
 
 \begin{definition}
 \label{def:rozmyta_relacja_preferencji}
-Niech $a$ i $b$ będą liczbami rozmytymi. Rozmyte relacje preferencji $P(a,b)$ i
-$P(b,a)$ zdefiniowane są w następujący sposób:
+Niech $a$ i $b$ bę\-dą licz\-ba\-mi rozmytymi. Roz\-my\-te relacje preferencji
+$P(a,b)$ i $P(b,a)$ są zdefiniowane w następujący sposób:
 \begin{equation}
 P(a,b) = \frac{D(a,b) + D(a \cap b, 0)}{D(a,0) + D(b,0)},
 \end{equation}
@@ -162,7 +163,7 @@ się, kiedy każdy ekspert ocenia wyszczególnione wcześniej cechy rozwiązań 
 przykład cena, wygoda, wykonanie samochodu). W wyniku otrzymywany jest zbiór
 relacji - po jednej na parę ekspert-kryterium. Aby uzyskać dane pozwalające na
 uporządkowanie alternatyw należy połączyć wszystkie wyniki każdego eksperta
-osobno.
+osobno \cite{Li2004}.
 
 Niech $p^t_k(x_i,x_j)$ będzie rozmytą relacją preferencji pomiędzy alternatywami
 $x_i$ i $x_j$ dla kryterium $c_k$ oraz eksperta $e^t$ liczoną według definicji
@@ -204,8 +205,8 @@ Ze względu na to, że oceny lingwistyczne są przybliżonymi wartościami podan
 przed decydentów, można uznać, że trapezowe funkcje przynależności są
 wystarczające dobre, aby uchwycić niepewność oceny w procesie decyzyjnym.
 Potrzebny jest również zbiór termów definiujący granularność niepewności. W
-literaturze proponuje się zbiory o nieparzystej liczbie elementów rozłożonych
-symetrycznie. Okazuje się również, że granularność, czyli moc zbioru, nie
+literaturze \cite{Herrera1995} proponuje się zbiory o nieparzystej liczbie
+elementów rozłożonych symetrycznie. Okazuje się również, że granularność, czyli moc zbioru, nie
 powinna przekraczać 11 elementów. Dzięki temu unika się uzyskania zbyt
 dokładnych wyników, co może być niemożliwe lub niepotrzebne. Co więcej, wybrany
 zbiór powinien spełniać następujące warunki:
@@ -267,15 +268,15 @@ są niesymetrycznymi zmiennymi lingwistycznymi (rysunek
   \label{fig:niesymetryczna_zmienna}
 \end{figure}
 
-W pracy dotyczącej informacji niesymetrycznej, Alonso et al. zaproponowali nowy
-model radzenia sobie z niesymetrycznymi zmiennymi lingwistycznymi w procesie
-podejmowania decyzji. W tym celu wykorzystana została tak zwana hierarchia
-lingwistyczna, czyli zbiór poziomów, gdzie każdy poziom reprezentuje zbiór
-termów lingwistycznych o odpowiedniej granularności. Każdy poziom oznaczany jest
-jako $l(t, n(t))$, gdzie $t$ to numer porządkowy poziomu, a $n(t)$ to liczba
-termów na poziomie $t$. Przez $S^{n(t)} = \{s^{n(t)}_0, \dotsc,
-s^{n(t)}_{n(t)-1}\}$ oznacza się zbiór termów lingwistycznych na poziomie $t$.
-Graficzny przykład hierarchii lingwistycznej pokazano na rysunku
+W pracy dotyczącej informacji niesymetrycznej, Alonso et al. \cite{Alonso2009}
+zaproponowali nowy model radzenia sobie z niesymetrycznymi zmiennymi
+lingwistycznymi w procesie podejmowania decyzji. W tym celu wykorzystana została
+tak zwana hierarchia lingwistyczna, czyli zbiór poziomów, gdzie każdy poziom
+reprezentuje zbiór termów lingwistycznych o odpowiedniej granularności. Każdy
+poziom oznaczany jest jako $l(t, n(t))$, gdzie $t$ to numer porządkowy poziomu,
+a $n(t)$ to liczba termów na poziomie $t$. Przez $S^{n(t)} = \{s^{n(t)}_0,
+\dotsc, s^{n(t)}_{n(t)-1}\}$ oznacza się zbiór termów lingwistycznych na
+poziomie $t$. Graficzny przykład hierarchii lingwistycznej pokazano na rysunku
 \ref{fig:hierarchia_lingwistyczna}.
 \begin{figure}[hb]
   \includegraphics[width=\linewidth]
@@ -291,8 +292,8 @@ niesymetrycznej zmiennej lingwistycznej wygodne okazuje się przedstawienie jej
 przy pomocy klasycznej zmiennej lingwistycznej. Najprostsza procedura wykonująca
 tą czynność przy użyciu hierarchii lingwistycznej wygląda następująco:
 \begin{enumerate}[i.]
-  \item Znajdź poziom $t^-$ w $LH$ (ang. Linguistic Hierarchy) reprezentujący
-  podzbiór termów $S^L_{UN}$ na lewo od środkowego termu w niesymetrycznym
+  \item Znajdź poziom $t^-$ w $LH$ (ang. \textit{Linguistic Hierarchy})
+  reprezentujący podzbiór termów $S^L_{UN}$ na lewo od środkowego termu w niesymetrycznym
   zbiorze termów lingwistycznych $S_{UN}$. Znaleziony poziom $LH$ powinien
   odpowiadać rozkładowi termów w $S^L_{UN}.$
   \item Znajdź poziom $t^+$ w $LH$ reprezentujący podzbiór termów $S^R_{UN}$ na
@@ -303,9 +304,9 @@ tą czynność przy użyciu hierarchii lingwistycznej wygląda następująco:
 
 Okazuje się, że pojawia się problem, kiedy nie istnieje poziom $t^-$ lub $t^+$ w
 $LH$ reprezentujący, odpowiednio, $S^L_{UN}$ lub $S^R_{UN}$. Dlatego Alonso et
-al. zaprezentowali algorytm, który zakłada brak poziomu $t^-$, jak na rysunku
-\ref{fig:niesymetryczna_zmienna} (przez analogię można napisać algorytm dla
-$t^+$):
+al. \cite{Alonso2009} zaprezentowali algorytm, który zakłada brak poziomu $t^-$,
+jak na rysunku \ref{fig:niesymetryczna_zmienna} (przez analogię można napisać
+algorytm dla $t^+$):
 \begin{enumerate}[i.]
   \item Reprezentacja $S^L_{UN}\colon$
   \begin{enumerate}[(a)]
