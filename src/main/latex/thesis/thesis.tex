@@ -77,17 +77,20 @@
 	\newpage
 	\addtolength\cfttablenumwidth{1em}
 	\listoftables	
-	
-\begin{comment}
-    \label{Załączniki}
+
+    \label{Dodatki}
     \newpage
     \appendix
-    \renewcommand{\appendixtocname}{Załączniki}
-    \renewcommand{\appendixpagename}{~\vspace{8cm} \begin{center}Załączniki\end{center}\newpage}
+    \renewcommand{\appendixtocname}{Dodatki}
+    \renewcommand{\appendixpagename}{~\begin{center}Dodatki\end{center}\newpage}
     \thispagestyle{empty}
     \addappheadtotoc
-    \appendixpage
-
+	\chapter{Zawartość załączonej płyty CD}
+	\input{chapters/appendixcdcontent/appendixcdcontent}
+	
+\begin{comment}
 	\listoftodos
 \end{comment}
+    
+
 \end{document}
